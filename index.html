@@ -1,0 +1,35 @@
+
+<html>
+<head>
+  <title>Maptime!</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <style>
+    body{
+      background:black;
+    }
+    #map{ margin: 5% auto;
+          height: 80%;
+          width:80%; }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script>
+
+  // initialize the map
+  var map = L.map('map').setView([34.05, -118.28], 12);
+
+  // load a tile layer
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 17,
+      minZoom: 9
+    }).addTo(map);
+var marker = L.polyline([[34.05, -118.28],[34.05, -118.38]],{color:'red'}).addTo(map).bindPopup("<p>Brandon's Amazing Line!</p><p>Yeah, it's red.</p>"); 
+  </script>
+</body>
+</html>
